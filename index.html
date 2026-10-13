@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Dora engineering delivery performance dashboard" />
+    <title>Dora · Engineering performance</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar">
+        <a class="brand" href="#" aria-label="Dora 홈">
+          <span class="brand-mark">D</span>
+          <span>Dora</span>
+        </a>
+
+        <nav class="main-nav" aria-label="주 메뉴">
+          <a class="nav-item active" href="#overview">
+            <span class="nav-icon">⌂</span>
+            <span>Overview</span>
+          </a>
+          <a class="nav-item" href="#metrics">
+            <span class="nav-icon">◒</span>
+            <span>Metrics</span>
+          </a>
+          <a class="nav-item" href="#activity">
+            <span class="nav-icon">↗</span>
+            <span>Activity</span>
+          </a>
+          <a class="nav-item" href="#teams">
+            <span class="nav-icon">♧</span>
+            <span>Teams</span>
+          </a>
+        </nav>
+
+        <div class="sidebar-bottom">
+          <div class="source-card">
+            <div class="source-icon">⌁</div>
+            <div>
+              <strong>GitHub connected</strong>
+              <span>Last sync 8 min ago</span>
+            </div>
+            <span class="connected-dot"></span>
+          </div>
+          <a class="nav-item" href="#settings">
+            <span class="nav-icon">⚙</span>
+            <span>Settings</span>
+          </a>
+          <div class="user-row">
+            <span class="avatar">HM</span>
+            <span class="user-name">Hyunmin Lee</span>
+            <span class="more">•••</span>
+          </div>
+        </div>
+      </aside>
+
+      <main class="main-content" id="overview">
+        <header class="topbar">
+          <div class="breadcrumb"><span>Workspace</span><span>/</span><strong>Engineering</strong></div>
+          <div class="topbar-actions">
+            <button class="icon-button" aria-label="알림">♧<span class="notification-dot"></span></button>
+            <button class="help-button">?</button>
+            <button class="date-button" id="periodButton">Last 30 days <span>⌄</span></button>
+          </div>
+        </header>
+
+        <div class="page-wrap">
+          <section class="page-heading">
+            <div>
+              <p class="eyebrow">ENGINEERING PERFORMANCE</p>
+              <h1>Ship with confidence.</h1>
+              <p class="heading-copy">팀의 전달 속도와 안정성을 한눈에 확인하세요.</p>
+            </div>
+            <div class="heading-meta">
+              <span class="live-indicator"><span></span>Live data</span>
+              <span class="updated">Updated 8 min ago</span>
+            </div>
+          </section>
+
+          <section class="metric-grid" id="metrics" aria-label="DORA 4대 지표">
+            <article class="metric-card accent-purple">
+              <div class="metric-card-header">
+                <div>
+                  <span class="metric-label">Deployment frequency</span>
+                  <span class="metric-subtitle">How often you deploy</span>
+                </div>
+                <span class="metric-symbol">↗</span>
+              </div>
+              <div class="metric-value">4.8 <small>/ week</small></div>
+              <div class="metric-footer">
+                <span class="trend positive">↑ 12.4%</span><span class="comparison">vs. previous period</span>
+                <span class="performance elite">Elite</span>
+              </div>
+              <div class="sparkline purple" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+            </article>
+
+            <article class="metric-card accent-blue">
+              <div class="metric-card-header">
+                <div>
+                  <span class="metric-label">Lead time for changes</span>
+                  <span class="metric-subtitle">From commit to production</span>
+                </div>
+                <span class="metric-symbol">◴</span>
+              </div>
+              <div class="metric-value">18 <small>hours</small></div>
+              <div class="metric-footer">
+                <span class="trend positive">↓ 8.2%</span><span class="comparison">vs. previous period</span>
+                <span class="performance high">High</span>
+              </div>
+              <div class="sparkline blue" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+            </article>
+
+            <article class="metric-card accent-orange">
+              <div class="metric-card-header">
+                <div>
+                  <span class="metric-label">Change failure rate</span>
+                  <span class="metric-subtitle">Deployments causing incidents</span>
+                </div>
+                <span class="metric-symbol">△</span>
+              </div>
+              <div class="metric-value">8.4 <small>%</small></div>
+              <div class="metric-footer">
+                <span class="trend negative">↑ 1.6%</span><span class="comparison">vs. previous period</span>
+                <span class="performance medium">Medium</span>
+              </div>
+              <div class="sparkline orange" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+            </article>
+
+            <article class="metric-card accent-green">
+              <div class="metric-card-header">
+                <div>
+                  <span class="metric-label">Mean time to restore</span>
+                  <span class="metric-subtitle">Time to recover from failure</span>
+                </div>
+                <span class="metric-symbol">↻</span>
+              </div>
+              <div class="metric-value">2.4 <small>hours</small></div>
+              <div class="metric-footer">
+                <span class="trend positive">↓ 16.8%</span><span class="comparison">vs. previous period</span>
+                <span class="performance elite">Elite</span>
+              </div>
+              <div class="sparkline green" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+            </article>
+          </section>
+
+          <section class="content-grid">
+            <article class="panel trend-panel">
+              <div class="panel-heading">
+                <div>
+                  <h2>Delivery trends</h2>
+                  <p>Performance over the last 30 days</p>
+                </div>
+                <div class="chart-legend"><span><i class="legend-purple"></i>Deployments</span><span><i class="legend-orange"></i>Failed changes</span></div>
+              </div>
+              <div class="chart-area">
+                <div class="y-axis"><span>24</span><span>18</span><span>12</span><span>6</span><span>0</span></div>
+                <div class="chart">
+                  <div class="grid-line one"></div><div class="grid-line two"></div><div class="grid-line three"></div><div class="grid-line four"></div>
+                  <svg viewBox="0 0 720 190" preserveAspectRatio="none" role="img" aria-label="배포와 실패 변경 추이 차트">
+                    <defs>
+                      <linearGradient id="areaPurple" x1="0" x2="0" y1="0" y2="1"><stop offset="0%" stop-color="#9076f6" stop-opacity=".23"/><stop offset="100%" stop-color="#9076f6" stop-opacity="0"/></linearGradient>
+                    </defs>
+                    <path class="area" d="M0 140 C45 136 55 108 90 120 S140 84 180 104 S235 50 270 78 S315 65 355 88 S400 36 445 62 S500 42 535 70 S590 25 620 48 S680 23 720 40 V190 H0Z"/>
+                    <path class="line purple-line" d="M0 140 C45 136 55 108 90 120 S140 84 180 104 S235 50 270 78 S315 65 355 88 S400 36 445 62 S500 42 535 70 S590 25 620 48 S680 23 720 40"/>
+                    <path class="line orange-line" d="M0 166 C55 160 75 168 110 150 S170 168 200 152 S250 164 290 144 S340 161 380 151 S430 166 465 142 S515 160 550 144 S605 155 640 131 S690 145 720 125"/>
+                    <circle class="chart-point" cx="620" cy="48" r="4"></circle>
+                  </svg>
+                  <div class="x-axis"><span>Jun 10</span><span>Jun 17</span><span>Jun 24</span><span>Jul 01</span><span>Jul 08</span></div>
+                </div>
+              </div>
+            </article>
+
+            <article class="panel health-panel">
+              <div class="panel-heading">
+                <div><h2>Team health</h2><p>Current performance level</p></div>
+                <button class="text-button">View teams <span>→</span></button>
+              </div>
+              <div class="health-score">
+                <div class="score-ring"><span>82</span><small>/ 100</small></div>
+                <div><strong>Strong performance</strong><p>You're ahead of 68% of teams</p></div>
+              </div>
+              <div class="health-bars">
+                <div class="health-row"><span>Speed</span><div class="bar"><i style="width: 88%"></i></div><b>88%</b></div>
+                <div class="health-row"><span>Stability</span><div class="bar"><i style="width: 76%"></i></div><b>76%</b></div>
+                <div class="health-row"><span>Recovery</span><div class="bar"><i style="width: 82%"></i></div><b>82%</b></div>
+              </div>
+              <div class="health-note"><span>✦</span> Keep improving your change failure rate to reach Elite.</div>
+            </article>
+          </section>
+
+          <section class="bottom-grid" id="activity">
+            <article class="panel activity-panel">
+              <div class="panel-heading"><div><h2>Recent activity</h2><p>Latest changes across your projects</p></div><button class="text-button">View all <span>→</span></button></div>
+              <div class="activity-list">
+                <div class="activity-item"><span class="activity-icon success">✓</span><div><strong>Deployment succeeded</strong><p>payment-api <span>·</span> production</p></div><time>12 min ago</time></div>
+                <div class="activity-item"><span class="activity-icon incident">!</span><div><strong>Incident resolved</strong><p>checkout-web <span>·</span> 42 min downtime</p></div><time>1 hr ago</time></div>
+                <div class="activity-item"><span class="activity-icon success">✓</span><div><strong>Deployment succeeded</strong><p>user-service <span>·</span> production</p></div><time>2 hrs ago</time></div>
+              </div>
+            </article>
+            <article class="panel objective-panel">
+              <div class="panel-heading"><div><h2>Quarterly objective</h2><p>Get to Elite performance</p></div><span class="objective-percent">74%</span></div>
+              <div class="objective-track"><i></i></div>
+              <div class="objective-labels"><span>Started Jun 01</span><span>14 days left</span></div>
+              <div class="objective-items"><span class="done">✓</span><span>Increase deployment frequency</span><b>Done</b><span class="done">✓</span><span>Reduce MTTR below 3h</span><b>Done</b><span class="todo">○</span><span>Bring CFR below 5%</span><b class="in-progress">In progress</b></div>
+            </article>
+          </section>
+          <footer class="page-footer"><span>Data sourced from GitHub Actions</span><span>All times in KST · <a href="#settings">Manage data sources</a></span></footer>
+        </div>
+      </main>
+    </div>
+    <div class="toast" id="toast" role="status">기간 필터는 시안에서 준비 중입니다.</div>
+    <script src="app.js"></script>
+  </body>
+</html>
